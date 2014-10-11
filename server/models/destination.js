@@ -5,7 +5,8 @@ var destinationSchema = new Schema({
   name: String,
   slug: String,
   state: String,
-  zipcode: String,
+  latitude: String,
+  longitude: String,
   activities: [String]
 });
 

@@ -19,6 +19,11 @@
     <ul>
       <li ng-repeat="destination in destinations">
         {{destination.name}}
+        <ul>
+          <li ng-repeat="activity in destination.activities">
+            {{activity}}
+          </li>
+        </ul>
       </li>
     </ul>
   </div>
