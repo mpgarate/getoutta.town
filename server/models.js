@@ -1,1 +1,1 @@
-require("./models/destination");
+module.exports.destination = require("./models/destination");
