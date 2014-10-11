@@ -3,10 +3,11 @@ var Schema = mongoose.Schema;
 
 var destinationSchema = new Schema({
   name: String,
-  zipcode: String
+  slug: String,
+  state: String,
+  zipcode: String,
+  activities: [String]
 });
-
-//var Destination = mongoose.model('Destination'); 
 
 destinationSchema.statics.loadFromFixtures = function(){
   var Destination = mongoose.model('Destination');

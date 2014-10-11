@@ -1,6 +1,13 @@
 [
   {
-    "name": "New York City",
-    "zipcode": "10003"
+    "name": "Boston",
+    "slug": "boston",
+    "state": "Massachusetts",
+    "zipcode": "02108",
+    "activities": [
+      "Walk the Freedom Trail",
+      "Camp on the Boston Harbor Islands",
+      "Have a picnic on Boston Common"
+    ]
   }
 ]
