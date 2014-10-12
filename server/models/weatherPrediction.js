@@ -8,8 +8,7 @@ var WeatherPredictionSchema = new Schema({
   temperatureMin: Number,
   temperatureMax: Number,
   precipProbability: Number,
-  windSpeed: Number,
-  dateFetched: Date
+  windSpeed: Number
 });
 
 WeatherPredictionSchema.statics.refreshWeatherIfNeeded = function() {
@@ -27,7 +26,7 @@ WeatherPredictionSchema.statics.refreshWeatherIfNeeded = function() {
     var secondsInADay = 86400;
     var today = new Date();
 
-    if (today - destinations[0].dateFetched > secondsInADay) {
+    if (today - destinations[0].date > secondsInADay) {
       WeatherPrediction.refreshAll();
     }
   });
@@ -96,7 +95,8 @@ WeatherPredictionSchema.statics.createPredictionFromJson = function(
     icon: json.daily.data[0].icon,
     temperatureMin: json.daily.data[0].temperatureMin,
     temperatureMax: json.daily.data[0].temperatureMax,
-    precipProbability: json.daily.data[0].precipProbability,
+    precipProbability: Math.round(json.daily.data[0].precipProbability *
+      100),
     windSpeed: Math.round(json.daily.data[0].windSpeed)
   });
 

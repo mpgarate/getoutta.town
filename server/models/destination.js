@@ -88,17 +88,13 @@ function getIconScore(prediction) {
 
   if (iconInput === "sleet" || iconInput === "snow") {
     return 10;
-  }
-  else if (iconInput === "fog" || iconInput === "rain") {
+  } else if (iconInput === "fog" || iconInput === "rain") {
     return 7;
-  }
-  else if (iconInput === "wind" || iconInput === "cloudy") {
+  } else if (iconInput === "wind" || iconInput === "cloudy") {
     return 5;
-  }
-  else if (iconInput === "partly-cloudy-day") {
+  } else if (iconInput === "partly-cloudy-day") {
     return 4;
-  }
-  else if (iconInput === "clear-day") {
+  } else if (iconInput === "clear-day") {
     return 0;
   } else {
     return 0;
@@ -124,23 +120,6 @@ function getTempScore(prediction) {
   }
 
 }
-
-// function getTempMaxScore(prediction) {
-//   var tempMax = prediction.temperatureMax;
-
-//   if (tempMax > 70 && tempMax <= 85) {
-//     return 0;
-//   }
-//   if ((tempMax > 85 && tempMax < 95) || (tempMax <= 70 && tempMax > 60)) {
-//     return 4;
-//   }
-//   if (tempMax <= 60 || tempMax >= 95) {
-//     return 7;
-//   }
-//   else {
-//     return 100;
-//   }
-// }
 
 Destination = mongoose.model("Destination", DestinationSchema);
 module.exports = Destination;
