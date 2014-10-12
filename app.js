@@ -8,12 +8,11 @@ var models = require("./server/models");
 mongoose.connect('mongodb://localhost/getouttatown');
 
 models.destination.loadFromFixtures(function() {
-  models.weatherPrediction.refreshWeatherIfNeeded();
+  models.weatherPrediction.refreshAll();
 });
 
-//app.get("/", controllers.destinations.list);
-
 app.get('/', function(req, res) {
+  models.weatherPrediction.refreshWeatherIfNeeded();
   res.sendFile(__dirname + '/client/views/index.html');
 });
 

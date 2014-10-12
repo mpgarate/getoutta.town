@@ -18,9 +18,6 @@ WeatherPredictionSchema.statics.refreshWeatherIfNeeded = function() {
   Destination.find({}, function(err, destinations) {
     if (err) return console.log("error:" + err);
 
-    // TODO: REMOVE ME!
-    WeatherPrediction.refreshAll();
-
     if (0 === destinations.length) {
       WeatherPrediction.refreshAll();
       return;
@@ -107,7 +104,6 @@ WeatherPredictionSchema.statics.createPredictionFromJson = function(destination,
   });
 
 }
-
 
 WeatherPrediction = mongoose.model("WeatherPrediction",
   WeatherPredictionSchema);
