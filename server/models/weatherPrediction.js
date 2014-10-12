@@ -56,7 +56,7 @@ WeatherPredictionSchema.statics.refreshForDestination = function(destination) {
 
   var daysUntilFriday = 5 - new Date().getDay();
 
-  var today = new Date();
+  var today = new Date(new Date().setHours(14));
   var friday = new Date(new Date().setDate(today.getDate() + daysUntilFriday));
   var saturday = new Date(new Date().setDate(friday.getDate() + 1));
   var sunday = new Date(new Date().setDate(saturday.getDate() + 1));
@@ -67,7 +67,7 @@ WeatherPredictionSchema.statics.refreshForDestination = function(destination) {
   destination.weatherPredictions = [];
 
   for (var i = 0; i < days.length; i++) {
-    var dayISO = Math.floor(days[i].getTime() / 1000);
+    var dayISO = Math.floor(days[i].setHours(14) / 1000);
 
     var callToApi = baseUrl + key + '/' + destination.latitude + ',' +
       destination.longitude +
@@ -75,7 +75,7 @@ WeatherPredictionSchema.statics.refreshForDestination = function(destination) {
 
     request(callToApi, function(error, response, body) {
       if (!error) {
-        WeatherPrediction.createPredictionFromJson(destination, body);
+        WeatherPrediction.createPredictionFromJson(destination, body, dayISO);
       } else {
         console.log("error getting weather from api: " + error);
       }
