@@ -88,10 +88,13 @@ WeatherPredictionSchema.statics.createPredictionFromJson = function(destination,
   body) {
 
   var WeatherPrediction = mongoose.model('WeatherPrediction');
+  var json = JSON.parse(body);
 
   var weatherPrediction = new WeatherPrediction({
     date: new Date(),
-    _destination: destination._id
+    icon: json.daily.data[0].icon,
+    temperatureMin: json.daily.data[0].temperatureMin,
+    temperatureMax: json.daily.data[0].temperatureMax
   });
 
   destination.weatherPredictions.push(weatherPrediction);
@@ -99,8 +102,9 @@ WeatherPredictionSchema.statics.createPredictionFromJson = function(destination,
     if (err) console.log("error: " + err);
   });
 
-
 }
+
+
 WeatherPrediction = mongoose.model("WeatherPrediction",
   WeatherPredictionSchema);
 module.exports = WeatherPrediction;

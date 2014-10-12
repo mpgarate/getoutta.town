@@ -2,8 +2,8 @@
   "name": "Boston",
   "slug": "boston",
   "state": "Massachusetts",
-  "latitude": "-71.052709",
-  "longitude": "42.366412",
+  "latitude": "42.366412",
+  "longitude": "-71.052709",
   "activities": [
     "Walk the Freedom Trail",
     "Camp on the Boston Harbor Islands",
