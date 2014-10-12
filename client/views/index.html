@@ -71,14 +71,10 @@
                             </div> <!-- close weatherInfo div-->
 
                             <div class="activityDescript">
-                              <ul>
-                                <li>Walk the Freedom Trail</li>
-                                <li>Camp on the Boston Harbor Islands</li>
-                                <li>Have a picnic on the Boston Common</li>
+                              <ul ng-repeat="activity in destination.activities">
+                                <li>{{activity}}</li>
                               </ul>
                             </div>
-
-
                           </div> <!-- close hsContent div -->
                         </div> <!-- close hsContainer div -->
                       </div>
