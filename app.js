@@ -7,9 +7,7 @@ var models = require("./server/models");
 
 mongoose.connect('mongodb://localhost/getouttatown');
 
-models.destination.loadFromFixtures(function() {
-  models.weatherPrediction.refreshAll();
-});
+models.destination.loadFromFixtures();
 
 app.get('/', function(req, res) {
   models.weatherPrediction.refreshWeatherIfNeeded();

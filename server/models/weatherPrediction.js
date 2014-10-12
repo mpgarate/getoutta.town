@@ -18,7 +18,7 @@ WeatherPredictionSchema.statics.refreshWeatherIfNeeded = function() {
   Destination.find({}, function(err, destinations) {
     if (err) return console.log("error:" + err);
 
-    if (0 === destinations.length) {
+    if (0 === destinations[0].weatherPredictions.length) {
       WeatherPrediction.refreshAll();
       return;
     }
@@ -65,7 +65,6 @@ WeatherPredictionSchema.statics.refreshForDestination = function(destination) {
 
   // for each day of the current or coming weekend
   destination.weatherPredictions = [];
-  destination.save();
 
   for (var i = 0; i < days.length; i++) {
     var dayISO = Math.floor(days[i].getTime() / 1000);
@@ -84,7 +83,8 @@ WeatherPredictionSchema.statics.refreshForDestination = function(destination) {
   }
 }
 
-WeatherPredictionSchema.statics.createPredictionFromJson = function(destination,
+WeatherPredictionSchema.statics.createPredictionFromJson = function(
+  destination,
   body) {
 
   var WeatherPrediction = mongoose.model('WeatherPrediction');
@@ -96,6 +96,8 @@ WeatherPredictionSchema.statics.createPredictionFromJson = function(destination,
     temperatureMin: json.daily.data[0].temperatureMin,
     temperatureMax: json.daily.data[0].temperatureMax
   });
+
+  console.log(weatherPrediction.date);
 
   destination.weatherPredictions.push(weatherPrediction);
   destination.save(function(err) {
