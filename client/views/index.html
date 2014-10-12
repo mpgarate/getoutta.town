@@ -61,7 +61,7 @@
                               <table>
                                 <tr ng-repeat="prediction in destination.weatherPredictions">
                                   <td><img src="/img/icon-{{prediction.icon}}.png"</td>
-                                  <td>FRI.</td>
+                                  <td>{{prediction.date}}</td>
                                   <td>{{prediction.temperatureMax}}&deg;F</td>
                                   <td class="lowTemp">{{prediction.temperatureMin}}&deg;F</td>
                                   <td class="weatherDetails">Precipitation: {{prediction.precipProbability}}%<br>Wind: {{prediction.windSpeed}} mph</td>
