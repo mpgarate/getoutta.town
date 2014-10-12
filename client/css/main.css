@@ -8,7 +8,7 @@ body, html {
 
 h1 { font-size: 5em; padding-top:100px; line-height: 50%; margin-bottom: 5px;}
 h2 { margin-top: 0; }
-
+h3 { font-size: 2em; color: #fff; margin-top: 15px; border: 1px solid #fff; padding: 10px; }
 td{ padding: 5px; }
 
 .homeSlide{
