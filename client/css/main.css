@@ -116,7 +116,6 @@ td{ padding: 5px; }
 .loading { background: url('../img/ico_loading.gif') no-repeat center center; }
 
 section {
-	min-width: 960px;
 	opacity: 0;
 }
 .loaded section,
