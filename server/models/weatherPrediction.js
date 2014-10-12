@@ -91,7 +91,7 @@ WeatherPredictionSchema.statics.createPredictionFromJson = function(destination,
   var json = JSON.parse(body);
 
   var weatherPrediction = new WeatherPrediction({
-    date: new Date(),
+    date: new Date(json.daily.data[0].time * 1000),
     icon: json.daily.data[0].icon,
     temperatureMin: json.daily.data[0].temperatureMin,
     temperatureMax: json.daily.data[0].temperatureMax
