@@ -25,7 +25,10 @@
         </ul>
         <ul>
           <li ng-repeat="weatherPrediction in destination.weatherPredictions">
-            {{weatherPrediction}}
+            {{weatherPrediction.date}}
+            {{weatherPrediction.temperatureMax}}
+            {{weatherPrediction.temperatureMin}}
+            {{weatherPrediction.icon}}
           </li>
         </ul>
       </li>

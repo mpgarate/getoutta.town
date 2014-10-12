@@ -13,13 +13,15 @@ var WeatherPredictionSchema = new Schema({
 
 WeatherPredictionSchema.statics.refreshWeatherIfNeeded = function() {
   var WeatherPrediction = mongoose.model('WeatherPrediction');
+  var Destination = mongoose.model('Destination');
 
-  WeatherPrediction.find({}, function(err, results) {
+  Destination.find({}, function(err, destinations) {
+    if (err) return console.log("error:" + err);
 
     // TODO: REMOVE ME!
     WeatherPrediction.refreshAll();
 
-    if (0 === results.length) {
+    if (0 === destinations.length) {
       WeatherPrediction.refreshAll();
       return;
     }
@@ -27,7 +29,7 @@ WeatherPredictionSchema.statics.refreshWeatherIfNeeded = function() {
     var secondsInADay = 86400;
     var today = new Date();
 
-    if (today - results[1].dateFetched > secondsInADay) {
+    if (today - destinations[0].dateFetched > secondsInADay) {
       WeatherPrediction.refreshAll();
     }
   });
@@ -38,6 +40,7 @@ WeatherPredictionSchema.statics.refreshAll = function() {
   var Destination = mongoose.model('Destination');
 
   Destination.find({}, function(err, results) {
+    if (err) return console.log("error: " + err);
     // for each destination
     for (var i = 0; i < results.length; i++) {
       var destination = results[i];
