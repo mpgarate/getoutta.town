@@ -1,14 +1,12 @@
-[
-  {
-    "name": "Boston",
-    "slug": "boston",
-    "state": "Massachusetts",
-    "latitude": "-71.052709",
-    "longitude": "42.366412",
-    "activities": [
-      "Walk the Freedom Trail",
-      "Camp on the Boston Harbor Islands",
-      "Have a picnic on Boston Common"
-    ]
-  }
-]
+[{
+  "name": "Boston",
+  "slug": "boston",
+  "state": "Massachusetts",
+  "latitude": "-71.052709",
+  "longitude": "42.366412",
+  "activities": [
+    "Walk the Freedom Trail",
+    "Camp on the Boston Harbor Islands",
+    "Have a picnic on Boston Common"
+  ]
+}]

@@ -7,20 +7,23 @@ var destinationSchema = new Schema({
   state: String,
   latitude: String,
   longitude: String,
-  activities: [String]
+  activities: [String],
+  weatherPredictions: [{
+
+  }]
 });
 
-destinationSchema.statics.loadFromFixtures = function(){
+destinationSchema.statics.loadFromFixtures = function() {
   var Destination = mongoose.model('Destination');
-  Destination.remove({}, function (err) {
+  Destination.remove({}, function(err) {
     if (err) console.log("error: " + err);
   });
 
   var destinationList = require('../fixtures/destinations.json');
 
-  for (var i = 0; i < destinationList.length; i++){
+  for (var i = 0; i < destinationList.length; i++) {
     var destination = new Destination(destinationList[i]);
-    destination.save(function(err, result){
+    destination.save(function(err, result) {
       if (err) console.log("error: " + err);
     });
   }
