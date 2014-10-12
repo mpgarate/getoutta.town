@@ -102,6 +102,7 @@ WeatherPredictionSchema.statics.createPredictionFromJson = function(destination,
 
   destination.weatherPredictions.push(weatherPrediction);
   destination.save(function(err) {
+    destination.updateScore();
     if (err) console.log("error: " + err);
   });
 

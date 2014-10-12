@@ -18,6 +18,8 @@
     <ul>
       <li ng-repeat="destination in destinations">
         {{destination.name}}
+
+        {{destination.score}}
         <ul>
           <li ng-repeat="activity in destination.activities">
             {{activity}}
