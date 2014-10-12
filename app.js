@@ -17,6 +17,7 @@ app.get('/', function(req, res) {
 app.use('/js', express.static(__dirname + '/client/js'));
 app.use('/css', express.static(__dirname + '/client/css'));
 app.use('/img', express.static(__dirname + '/client/img'));
+app.use('/', express.static(__dirname + '/client'));
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
 app.get('/api/destinations', controllers.destinations.list);
