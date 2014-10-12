@@ -26,7 +26,6 @@ td{ padding: 5px; }
 	background: rgba(255,255,255, .5);
 	float:left;
 	width:40%;
-	height: 400px;
 	padding: 20px 20px 20px 20px;
 	margin-left: 3em;
 	margin-top: 1em;
@@ -35,7 +34,14 @@ td{ padding: 5px; }
 }
 .description img{
 	width:100%;
-	padding-top: 10px;
+	padding-top: 5px;
+}
+.activityDescript{
+	position: absolute;
+	top: 350px;
+	left: 48px;
+	background: rgba(255,255,255,.5);
+	width: 390px;
 }
 /****** Weather *****/
 .lowTemp{
@@ -54,7 +60,7 @@ td{ padding: 5px; }
 .weatherInfo{
 	background: rgba(255,255,255, .5);
 	/*border: 5px solid #444 ;*/
-	width: 25%;
+	width: 350px;
 	height: 200px;
 	padding: 30px 20px 20px 20px;
 	margin-left: 3em;
@@ -189,10 +195,10 @@ main { overflow-x: hidden; }
 /* Slide 4 */
 #slide-4 .bcg {background-image:url('../img/bcg_slide-4.jpg')}
 #slide-4 .hsContent {
-}
-	#slide-4 h2 {
 	    margin-left: -170px;
 	    margin-top: -400px;
+}
+	#slide-4 h2 {
 	    background: none;
 	}
 
