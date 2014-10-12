@@ -21,6 +21,7 @@ DestinationSchema.statics.updateScore = function() {
 
 DestinationSchema.statics.loadFromFixtures = function(callbackFunction) {
   var Destination = mongoose.model('Destination');
+
   Destination.remove({}, function(err) {
     if (err) console.log("error: " + err);
   });
@@ -30,7 +31,6 @@ DestinationSchema.statics.loadFromFixtures = function(callbackFunction) {
   var lastSave = false;
   for (var i = 0; i < destinationList.length; i++) {
     var destination = new Destination(destinationList[i]);
-    destination._id = new mongoose.Types.ObjectId;
 
     if (i === destinationList.length - 1) {
       lastSave = true;
