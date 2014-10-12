@@ -18,9 +18,6 @@ WeatherPredictionSchema.statics.refreshWeatherIfNeeded = function() {
   Destination.find({}, function(err, destinations) {
     if (err) return console.log("error:" + err);
 
-    // TODO: REMOVE ME!
-    WeatherPrediction.refreshAll();
-
     if (0 === destinations.length) {
       WeatherPrediction.refreshAll();
       return;
@@ -94,7 +91,7 @@ WeatherPredictionSchema.statics.createPredictionFromJson = function(destination,
   var json = JSON.parse(body);
 
   var weatherPrediction = new WeatherPrediction({
-    date: new Date(),
+    date: new Date(json.daily.data[0].time * 1000),
     icon: json.daily.data[0].icon,
     temperatureMin: json.daily.data[0].temperatureMin,
     temperatureMax: json.daily.data[0].temperatureMax
@@ -102,11 +99,11 @@ WeatherPredictionSchema.statics.createPredictionFromJson = function(destination,
 
   destination.weatherPredictions.push(weatherPrediction);
   destination.save(function(err) {
+    destination.updateScore();
     if (err) console.log("error: " + err);
   });
 
 }
-
 
 WeatherPrediction = mongoose.model("WeatherPrediction",
   WeatherPredictionSchema);

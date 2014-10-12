@@ -18,6 +18,8 @@
     <ul>
       <li ng-repeat="destination in destinations">
         {{destination.name}}
+
+        {{destination.score}}
         <ul>
           <li ng-repeat="activity in destination.activities">
             {{activity}}
@@ -26,8 +28,6 @@
         <ul>
           <li ng-repeat="weatherPrediction in destination.weatherPredictions">
             {{weatherPrediction.date}}
-            {{weatherPrediction.temperatureMax}}
-            {{weatherPrediction.temperatureMin}}
             {{weatherPrediction.icon}}
           </li>
         </ul>

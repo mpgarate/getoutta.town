@@ -1,7 +1,7 @@
 [{
   "name": "Boston",
   "slug": "boston",
-  "state": "Massachusetts",
+  "state": "MA",
   "latitude": "42.366412",
   "longitude": "-71.052709",
   "activities": [
@@ -9,4 +9,41 @@
     "Camp on the Boston Harbor Islands",
     "Have a picnic on Boston Common"
   ]
-}]
+},
+{
+  "name": "New York City",
+  "slug": "new-york-city",
+  "state": "NY",
+  "latitude": "40.762182",
+  "longitude": "-73.978157",
+  "activities": [
+    "Walk through Times Square at night",
+    "Take a ferry to the Statue of Liberty",
+    "Watch the sunset on the Empire State Building"
+  ]
+},
+{
+  "name": "Washington",
+  "slug": "washington-dc",
+  "state": "DC",
+  "latitude": "38.899883",
+  "longitude": "-77.039286",
+  "activities": [
+    "Visit panda cubs at the National Zoo",
+    "Climb the steps of the Lincoln Memorial",
+    "Tour the White House"
+  ]
+},
+{
+  "name": "San Francisco",
+  "slug": "san-francisco",
+  "state": "CA",
+  "latitude": "37.781854",
+  "longitude": "-122.415971",
+  "activities": [
+    "Bike across the Golden Gate Bridge",
+    "Cruise over to Alcatraz Island",
+    "Ride the SF cable car"
+  ]
+}
+]
