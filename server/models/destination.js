@@ -11,8 +11,13 @@ var DestinationSchema = new Schema({
   latitude: String,
   longitude: String,
   activities: [String],
+  score: Number,
   weatherPredictions: [WeatherPredictionSchema]
 });
+
+DestinationSchema.statics.updateScore = function() {
+  // for katie
+}
 
 DestinationSchema.statics.loadFromFixtures = function(callbackFunction) {
   var Destination = mongoose.model('Destination');
