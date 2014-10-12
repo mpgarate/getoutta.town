@@ -45,7 +45,8 @@ td{ padding: 5px; }
 }
 /****** Weather *****/
 .lowTemp{
-	color: #777;
+	color: #555;
+	opacity: 0.5;
 }
 .navlist li{
 	display: inline;
