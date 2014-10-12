@@ -172,6 +172,17 @@ main { overflow-x: hidden; }
 		text-decoration: underline;
 	}
 
+
+.bcg-new-orleans {background-image:url('../img/bcg_slide-new-orleans.jpg')}
+.bcg-boston{background-image:url('../img/bcg_slide-boston.jpg')}
+.bcg-washington-dc {background-image:url('../img/bcg_slide-washington-dc.jpg')}
+.bcg-san-francisco {background-image:url('../img/bcg_slide-san-francisco.jpg')}
+.bcg-miami{background-image:url('../img/bcg_slide-miami.jpg')}
+.bcg-san-juan{background-image:url('../img/bcg_slide-san-juan.jpg')}
+.bcg-seattle{background-image:url('../img/bcg_slide-seattle.jpg')}
+.bcg-los-angeles{background-image:url('../img/bcg_slide-los-angeles.jpg')}
+.bcg-burlington{background-image:url('../img/bcg_slide-burlington.jpg')}
+
 /* Slide 1 */
 #slide-1 .bcg {background-image:url('../img/bcg_slide-1.jpg')}
 #slide-1 .hsContent {

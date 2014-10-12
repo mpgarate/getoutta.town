@@ -24,13 +24,13 @@
               <img src="/img/bcg_slide-1.jpg">
               <img src="/img/bcg_slide-2.jpg">
               <img src="/img/bcg_slide-3.jpg">
-              <img src="/img/bcg_slide-4.png">
+              <img src="/img/bcg_slide-4.jpg">
               <img src="/img/bcg_slide-5.jpg">
               <img src="/img/bcg_slide-6.jpg">
               <img src="/img/bcg_slide-7.jpg">
-              <img src="/img/bcg_slide-8.png">
+              <img src="/img/bcg_slide-8.jpg">
               <img src="/img/bcg_slide-9.jpg">
-              <img src="/img/bcg_slide-10.png">
+              <img src="/img/bcg_slide-10.jpg">
             </div>
 
             <main>
@@ -51,8 +51,8 @@
 
               <div ng-controller="destinationsController">
                 <div ng-repeat="destination in destinations">
-                  <section id="slide-2" class="homeSlide" skrollr-tag>
-                    <div class="bcg">
+                  <section id="slide-{{$index}}" class="homeSlide" skrollr-tag>
+                    <div class="bcg bcg-{{destination.slug}}">
                       <div class="hsContainer">
                         <div class="hsContent">
                           <h2>{{$index + 1}}. {{destination.name}}, {{destination.state}}</h2>
