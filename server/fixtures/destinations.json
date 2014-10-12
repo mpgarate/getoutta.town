@@ -5,7 +5,7 @@
   "latitude": "42.366412",
   "longitude": "-71.052709",
   "activities": [
-    "Walk the Freedom Trail",
+    "Follow the Freedom Trail",
     "Camp on the Boston Harbor Islands",
     "Have a picnic on Boston Common"
   ]
@@ -19,7 +19,7 @@
   "activities": [
     "Walk through Times Square at night",
     "Take a ferry to the Statue of Liberty",
-    "Watch the sunset on the Empire State Building"
+    "Watch the sunset on top of the Empire State Building"
   ]
 },
 {
@@ -29,7 +29,7 @@
   "latitude": "38.899883",
   "longitude": "-77.039286",
   "activities": [
-    "Visit panda cubs at the National Zoo",
+    "Hang with panda cubs at the National Zoo",
     "Climb the steps of the Lincoln Memorial",
     "Tour the White House"
   ]
@@ -41,9 +41,9 @@
   "latitude": "37.781854",
   "longitude": "-122.415971",
   "activities": [
-    "Bike across the Golden Gate Bridge",
+    "Bike the Golden Gate Bridge",
     "Cruise over to Alcatraz Island",
-    "Ride the SF cable car"
+    "Ride the San Francisco cable car"
   ]
 },
 {
@@ -53,7 +53,7 @@
   "latitude": "29.938970",
   "longitude": "-90.095599",
   "activities": [
-    "Eat dinner in the French Quarter",
+    "Eat beignets in the French Quarter",
     "Hear jazz at the Spotted Cat",
     "See the floats year-round at Mardi Gras World"
   ]
@@ -65,7 +65,7 @@
   "latitude": "25.781087",
   "longitude": "-80.199494",
   "activities": [
-    "Explore Art Deco in South Beach",
+    "Wander in South Beach’s Art Deco District",
     "Kayak with manatees in the Everglades",
     "Go voodoo shopping in Little Haiti"
   ]
@@ -77,8 +77,8 @@
   "latitude": "18.453556",
   "longitude": "-66.081001",
   "activities": [
-    "Take a stroll through Old San Juan",
-    "Relax on the beach in Isla Verde",
+    "Take a segway tour of Old San Juan",
+    "Relax on white-sand beaches in Isla Verde",
     "Travel back in time at La Fortaleza"
   ]
 },
@@ -89,9 +89,9 @@
   "latitude": "47.652328",
   "longitude": "-122.305693",
   "activities": [
-    "Head up the Space Needle",
-    "Have lunch at Pike Place Market",
-    "Explore the Experience Music Project Museum"
+    "Head up the Space Needle for a peek at Mt. Rainier",
+    "Grab lunch at Pike Place Market",
+    "Catch your own seafood on Whidbey Island"
   ]
 },
 {
@@ -101,7 +101,7 @@
   "latitude": "34.063741",
   "longitude": "-118.316975",
   "activities": [
-    "Go on the Backlot Tour at Universal Studios",
+    "Go on the Backlot Tour of Universal Studios",
     "Hike the Hollywood Sign trail",
     "Ride the ferris wheel at Santa Monica Pier"
   ]
