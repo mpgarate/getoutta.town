@@ -9,6 +9,90 @@ body, html {
 h1 { font-size: 5em; padding-top:100px; line-height: 50%; margin-bottom: 5px;}
 h2 { margin-top: 0; }
 
+td{ padding: 5px; }
+
+/****** Support *****/
+.text-center{
+	text-align: center;
+	padding-left: 16px;
+	padding-top: 10px;
+}
+
+/****** Activities ****/
+.descriptTitle{
+	font-weight: 700;
+}
+.description{
+	background: rgba(255,255,255, .5);
+	float:left;
+	width:40%;
+	height: 400px;
+	padding: 20px 20px 20px 20px;
+	margin-left: 3em;
+	margin-top: 1em;
+	font-weight: 400;
+	float: left;
+}
+.description img{
+	width:100%;
+	padding-top: 10px;
+}
+/****** Weather *****/
+.lowTemp{
+	color: #777;
+}
+.navlist li{
+	display: inline;
+	list-style-type: none;
+}
+.weatherDetails{
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 110%;
+	padding-left: 15px;
+}
+.weatherInfo{
+	background: rgba(255,255,255, .5);
+	/*border: 5px solid #444 ;*/
+	width: 25%;
+	height: 200px;
+	padding: 30px 20px 20px 20px;
+	margin-left: 3em;
+	margin-top: 1em;
+	font-weight: 700;
+	float: left;
+}
+.weatherInfo-1{
+	/*background-color: #fff;*/
+	text-align: left;
+	position: absolute;
+	left: 53px;
+	top: 93px;
+	width:30%;
+}
+.weatherInfo-2{
+	/*background-color:#fff;*/
+	text-align: left;
+	position: absolute;
+	left: 53px;
+	top: 160px;
+	height:0px;
+	width:30%%;
+}
+.weatherInfo-3{
+	/*background-color:#fff;*/
+	text-align: left;
+	position: absolute;
+	left: 53px;
+	top: 227px;
+	height:0px;
+	width:30%%;
+}
+.weatherInfo img{
+	padding: 7px;
+	vertical-align: middle;
+	padding-right: 15px;
+}
 .form_class{
     padding: 0.5em 0.6em;
     display: inline-block;
@@ -60,8 +144,9 @@ main { overflow-x: hidden; }
 
 .hsContent {
 	position: absolute;
-	left: 23%;
+	left: 20%;
 	top: 75%;
+	width: 100%;
 }
 	.hsContent h1 {
 		color: #fff;
@@ -86,7 +171,7 @@ main { overflow-x: hidden; }
 /* Slide 2 */
 #slide-2 .bcg {background-image:url('../img/bcg_slide-2.jpg')}
 #slide-2 .hsContent {
-	margin-left: -150px;
+	margin-left: -170px;
 	margin-top:-400px;
 	bottom: 200px;
 }
@@ -94,7 +179,7 @@ main { overflow-x: hidden; }
 /* Slide 3 */
 #slide-3 .bcg {background-image:url('../img/bcg_slide-3.jpg')}
 #slide-3 .hsContent {
-	margin-left: -150px;
+	margin-left: -170px;
 	margin-top: -400px;
 }
 	#slide-3 h2 {
@@ -106,7 +191,7 @@ main { overflow-x: hidden; }
 #slide-4 .hsContent {
 }
 	#slide-4 h2 {
-	    margin-left: -139px;
+	    margin-left: -170px;
 	    margin-top: -400px;
 	    background: none;
 	}
