@@ -154,8 +154,8 @@ main { overflow-x: hidden; }
 
 .hsContent {
 	position: absolute;
-	left: 20%;
-	top: 20%;
+	left: 10%;
+	top: 10%;
 	width: 100%;
 }
 .hsContent h1 {
