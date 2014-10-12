@@ -2,24 +2,38 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var request = require('request');
 
-var weatherPredictionSchema = new Schema({
+var WeatherPredictionSchema = new Schema({
+  date: Date,
   icon: String,
   temperatureMin: Number,
   temperatureMax: Number,
-  precipProbability: Number
+  precipProbability: Number,
+  dateFetched: Date
 });
 
-weatherPredictionSchema.statics.refreshWeatherIfNeeded = function() {
+WeatherPredictionSchema.statics.refreshWeatherIfNeeded = function() {
   var WeatherPrediction = mongoose.model('WeatherPrediction');
 
   WeatherPrediction.find({}, function(err, results) {
+
+    // TODO: REMOVE ME!
+    WeatherPrediction.refreshAll();
+
     if (0 === results.length) {
+      WeatherPrediction.refreshAll();
+      return;
+    }
+
+    var secondsInADay = 86400;
+    var today = new Date();
+
+    if (today - results[1].dateFetched > secondsInADay) {
       WeatherPrediction.refreshAll();
     }
   });
 };
 
-weatherPredictionSchema.statics.refreshAll = function() {
+WeatherPredictionSchema.statics.refreshAll = function() {
   var WeatherPrediction = mongoose.model('WeatherPrediction');
   var Destination = mongoose.model('Destination');
 
@@ -32,7 +46,7 @@ weatherPredictionSchema.statics.refreshAll = function() {
   });
 }
 
-weatherPredictionSchema.statics.refreshForDestination = function(destination) {
+WeatherPredictionSchema.statics.refreshForDestination = function(destination) {
   var WeatherPrediction = mongoose.model('WeatherPrediction');
 
   var baseUrl = 'http://api.forecast.io/forecast/';
@@ -50,6 +64,9 @@ weatherPredictionSchema.statics.refreshForDestination = function(destination) {
   var days = [friday, saturday, sunday];
 
   // for each day of the current or coming weekend
+  destination.weatherPredictions = [];
+  destination.save();
+
   for (var i = 0; i < days.length; i++) {
     var dayISO = Math.floor(days[i].getTime() / 1000);
 
@@ -59,7 +76,7 @@ weatherPredictionSchema.statics.refreshForDestination = function(destination) {
 
     request(callToApi, function(error, response, body) {
       if (!error) {
-        WeatherPrediction.createPredictionFromJson(body);
+        WeatherPrediction.createPredictionFromJson(destination, body);
       } else {
         console.log("error getting weather from api: " + error);
       }
@@ -67,11 +84,24 @@ weatherPredictionSchema.statics.refreshForDestination = function(destination) {
   }
 }
 
-weatherPredictionSchema.statics.createPredictionFromJson = function(body) {
-  // katie does this
+WeatherPredictionSchema.statics.createPredictionFromJson = function(destination,
+  body) {
 
-  // var temperatureMin = body.daily.temperatureMin;
-  // var foo = body['daily']['temperatureMin'];
+  var WeatherPrediction = mongoose.model('WeatherPrediction');
+
+  var weatherPrediction = new WeatherPrediction({
+    date: new Date(),
+    _destination: destination._id
+  });
+
+  destination.weatherPredictions.push(weatherPrediction);
+  destination.save(function(err) {
+    if (err) console.log("error: " + err);
+  });
+
+
 }
-
-module.exports = mongoose.model("WeatherPrediction", weatherPredictionSchema);
+WeatherPrediction = mongoose.model("WeatherPrediction",
+  WeatherPredictionSchema);
+module.exports = WeatherPrediction;
+module.exports.Schema = WeatherPredictionSchema;

@@ -23,6 +23,11 @@
             {{activity}}
           </li>
         </ul>
+        <ul>
+          <li ng-repeat="weatherPrediction in destination.weatherPredictions">
+            {{weatherPrediction.date}}
+          </li>
+        </ul>
       </li>
     </ul>
   </div>
