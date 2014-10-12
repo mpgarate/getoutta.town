@@ -11,6 +11,10 @@ h2 { margin-top: 0; }
 
 td{ padding: 5px; }
 
+.homeSlide{
+  height:700px;
+}
+
 /****** Support *****/
 .text-center{
 	text-align: center;

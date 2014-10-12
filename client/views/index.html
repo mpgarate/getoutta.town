@@ -1,52 +1,110 @@
-  <!DOCTYPE html>
-<html ng-app="getOuttaTown">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>GetOuttaTown</title>
-    <meta name="description" content="Find the destinations with the best weather this weekend. ">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
-    <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
-    <link rel="stylesheet" href="css/app.css">
-    <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
-  </head>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html ng-app="getOuttaTown" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>GetOuttaTown</title>
+  <meta name="description" content="">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+  <script src="/js/ui/vendor/modernizr-2.7.1.min.js"></script>
+</head>
 
-  <body>
 
-  <div ng-controller="destinationsController">
-    <ul>
-      <li ng-repeat="destination in destinations">
-        {{destination.name}}
+<body class="loading">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+            <![endif]-->
 
-        {{destination.score}}
-        <ul>
-          <li ng-repeat="activity in destination.activities">
-            {{activity}}
-          </li>
-        </ul>
-        <ul>
-          <li ng-repeat="weatherPrediction in destination.weatherPredictions">
-            date: {{weatherPrediction.date}} | 
-            icon: {{weatherPrediction.icon}} | 
-            precipitation: {{weatherPrediction.precipProbability}} % | 
+            <div id="preload">
+              <img src="/img/bcg_slide-1.jpg">
+              <img src="/img/bcg_slide-2.jpg">
+              <img src="/img/bcg_slide-3.jpg">
+              <img src="/img/bcg_slide-4.png">
+              <img src="/img/bcg_slide-5.jpg">
+              <img src="/img/bcg_slide-6.jpg">
+              <img src="/img/bcg_slide-7.jpg">
+              <img src="/img/bcg_slide-8.png">
+              <img src="/img/bcg_slide-9.jpg">
+              <img src="/img/bcg_slide-10.png">
+            </div>
 
-            windSpeed: {{weatherPrediction.windSpeed}} mph | 
+            <main>
 
-            tempMax: {{weatherPrediction.temperatureMax}} f | 
-            tempMin: {{weatherPrediction.temperatureMin}} f
+              <section id="slide-1" class="homeSlide">
+                <div class="bcg">
+                  <div class="hsContainer">
+                    <div class="hsContent">
+                      <h1>GET OUTTA TOWN.</h1>
+                      <form class="form_class">
+                        <input type="text" class="pure-input-rounded">
+                        <button type="submit" class="pure-button">Search</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </section>
 
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
+              <div ng-controller="destinationsController">
+                <div ng-repeat="destination in destinations">
+                  <section id="slide-2" class="homeSlide" skrollr-tag>
+                    <div class="bcg">
+                      <div class="hsContainer">
+                        <div class="hsContent">
+                          <h2>{{$index + 1}}. {{destination.name}}, {{destination.state}}</h2>
+                          <div class="weatherInfo">
+                            <div class="weatherInfo-1">
+                              <table>
+                                <tr ng-repeat="prediction in destination.weatherPredictions">
+                                  <td><img src="/img/icon-{{prediction.icon}}.png"</td>
+                                  <td>FRI.</td>
+                                  <td>{{prediction.temperatureMax}}&deg;F</td>
+                                  <td class="lowTemp">{{prediction.temperatureMin}}&deg;F</td>
+                                  <td class="weatherDetails">Precipitation: {{prediction.precipProbability}}%<br>Wind: {{prediction.windSpeed}} mph</td>
+                                </tr>
+                                </table>
+                              </div> <!-- close weatherInfo-1 div-->
+                            </div> <!-- close weatherInfo div-->
 
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-resource.js"></script>
+                            <div class="activityDescript">
+                              <ul>
+                                <li>Walk the Freedom Trail</li>
+                                <li>Camp on the Boston Harbor Islands</li>
+                                <li>Have a picnic on the Boston Common</li>
+                              </ul>
+                            </div>
 
-    <script type="text/javascript" src="/js/app.js"></script>
-    <script type="text/javascript" src="/js/controllers/destinations-controller.js"></script>
 
-  </body>
-</html>
+                          </div> <!-- close hsContent div -->
+                        </div> <!-- close hsContainer div -->
+                      </div>
+                    </section>
+                  </div><!-- end ng-repeat -->
+                </div><!-- destinationsController -->
+
+
+              </main>
+
+              <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+              <script>window.jQuery || document.write('<script src="js/ui/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+              <script src="/js/ui/imagesloaded.js"></script>
+              <!-- <script src="/js/ui/skrollr.js"></script> -->
+              <script src="/js/ui/_main.js"></script>
+
+
+
+              <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
+              <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-resource.js"></script>
+
+              <script type="text/javascript" src="/js/app.js"></script>
+              <script type="text/javascript" src="/js/controllers/destinations-controller.js"></script>
+              <!--
+              <script type="text/javascript" src="/js/directives/skrollr.dir.js"></script>
+              <script type="text/javascript" src="/js/services/skrollrService.js"></script>
+            -->
+          </body>
+          </html>
