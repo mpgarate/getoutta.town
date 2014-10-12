@@ -68,10 +68,14 @@ weatherPredictionSchema.statics.refreshForDestination = function(destination) {
 }
 
 weatherPredictionSchema.statics.createPredictionFromJson = function(body) {
-  // katie does this
+  var json = JSON.parse(body);
 
-  // var temperatureMin = body.daily.temperatureMin;
-  // var foo = body['daily']['temperatureMin'];
+  var icon = json.daily.data[0].icon;
+  var temperatureMin = json.daily.data[0].temperatureMin;
+  var temperatureMax = json.daily.data[0].temperatureMax;
+  var precipProbability = json.daily.data[0].precipProbability;
+  var time = json.daily.data[0].time;
+  console.log("time is: " + time + "icon is: " + icon + "\n tempmin is : " + temperatureMin + "\n tempmax is: " + temperatureMax + "\n precipProbability is: " + precipProbability);
 }
 
 module.exports = mongoose.model("WeatherPrediction", weatherPredictionSchema);
