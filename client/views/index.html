@@ -21,16 +21,15 @@
             <![endif]-->
 
             <div id="preload">
-              <img src="/img/bcg_slide-1.jpg">
-              <img src="/img/bcg_slide-2.jpg">
-              <img src="/img/bcg_slide-3.jpg">
-              <img src="/img/bcg_slide-4.jpg">
-              <img src="/img/bcg_slide-5.jpg">
-              <img src="/img/bcg_slide-6.jpg">
-              <img src="/img/bcg_slide-7.jpg">
-              <img src="/img/bcg_slide-8.jpg">
-              <img src="/img/bcg_slide-9.jpg">
-              <img src="/img/bcg_slide-10.jpg">
+              <img src="/img/bcg_slide-new-orleans.jpg">
+              <img src="/img/bcg_slide-boston.jpg">
+              <img src="/img/bcg_slide-washington-dc.jpg">
+              <img src="/img/bcg_slide-san-francisco.jpg">
+              <img src="/img/bcg_slide-miami.jpg">
+              <img src="/img/bcg_slide-san-juan.jpg">
+              <img src="/img/bcg_slide-seattle.jpg">
+              <img src="/img/bcg_slide-los-angeles.jpg">
+              <img src="/img/bcg_slide-burlington.jpg">
             </div>
 
             <main>
@@ -40,75 +39,72 @@
                   <div class="hsContainer">
                     <div class="hsContent">
                       <h1>GET OUTTA TOWN.</h1>
-                      <form class="form_class">
-                        <input type="text" class="pure-input-rounded">
-                        <button type="submit" class="pure-button">Search</button>
-                      </form>
-                    </div>
+                    </form>
                   </div>
                 </div>
-              </section>
+              </div>
+            </section>
 
-              <div ng-controller="destinationsController">
-                <div ng-repeat="destination in destinations">
-                  <section id="slide-{{$index}}" class="homeSlide" skrollr-tag>
-                    <div class="bcg bcg-{{destination.slug}}">
-                      <div class="hsContainer">
-                        <div class="hsContent">
-                          <h2>{{$index + 1}}. {{destination.name}}, {{destination.state}}</h2>
-                          <div class="weatherInfo">
-                            <div class="weatherInfo-1">
-                              <table>
-                                <tr ng-repeat="prediction in destination.weatherPredictions">
-                                  <td><img src="/img/icon-{{prediction.icon}}.png"</td>
-                                  <td>{{prediction.date}}</td>
-                                  <td>{{prediction.temperatureMax}}&deg;F</td>
-                                  <td class="lowTemp">{{prediction.temperatureMin}}&deg;F</td>
-                                  <td class="weatherDetails">Precipitation: {{prediction.precipProbability}}%<br>Wind: {{prediction.windSpeed}} mph</td>
-                                </tr>
-                              </table>
-                            </div> <!-- close weatherInfo-1 div-->
-                          </div> <!-- close weatherInfo div-->
+            <div ng-controller="destinationsController">
+              <div ng-repeat="destination in destinations">
+                <section id="slide-{{$index}}" class="homeSlide" skrollr-tag>
+                  <div class="bcg bcg-{{destination.slug}}">
+                    <div class="hsContainer">
+                      <div class="hsContent">
+                        <h2>{{$index + 1}}. {{destination.name}}, {{destination.state}}</h2>
+                        <div class="weatherInfo">
+                          <div class="weatherInfo-1">
+                            <table>
+                              <tr ng-repeat="prediction in destination.weatherPredictions">
+                                <td><img src="/img/icon-{{prediction.icon}}.png"</td>
+                                <td>{{prediction.date}}</td>
+                                <td>{{prediction.temperatureMax}}&deg;F</td>
+                                <td class="lowTemp">{{prediction.temperatureMin}}&deg;F</td>
+                                <td class="weatherDetails">Precipitation: {{prediction.precipProbability}}%<br>Wind: {{prediction.windSpeed}} mph</td>
+                              </tr>
+                            </table>
+                          </div> <!-- close weatherInfo-1 div-->
+                        </div> <!-- close weatherInfo div-->
 
-                          <div class="activityDescript">
-                            <ul ng-repeat="activity in destination.activities">
-                              <li>{{activity}}</li>
-                            </ul>
-                          </div>
-                        </div> <!-- close hsContent div -->
-                      </div> <!-- close hsContainer div -->
-                    </div>
-                  </section>
-                </div><!-- end ng-repeat -->
-              </div><!-- destinationsController -->
-
-
-            </main>
-
-            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-            <script>window.jQuery || document.write('<script src="js/ui/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-            <script src="/js/ui/imagesloaded.js"></script>
-            <!-- <script src="/js/ui/skrollr.js"></script> -->
-            <script src="/js/ui/_main.js"></script>
+                        <div class="activityDescript">
+                          <ul ng-repeat="activity in destination.activities">
+                            <li>{{activity}}</li>
+                          </ul>
+                        </div>
+                      </div> <!-- close hsContent div -->
+                    </div> <!-- close hsContainer div -->
+                  </div>
+                </section>
+              </div><!-- end ng-repeat -->
+            </div><!-- destinationsController -->
 
 
+          </main>
 
-            <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
-            <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-resource.js"></script>
+          <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+          <script>window.jQuery || document.write('<script src="js/ui/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+          <script src="/js/ui/imagesloaded.js"></script>
+          <!-- <script src="/js/ui/skrollr.js"></script> -->
+          <script src="/js/ui/_main.js"></script>
 
-            <script type="text/javascript" src="/js/app.js"></script>
-            <script type="text/javascript" src="/js/controllers/destinations-controller.js"></script>
-            
-            <script>
-              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-              })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-              ga('create', 'UA-49717852-4', 'auto');
-              ga('send', 'pageview');
 
-            </script>
-            
-          </body>
-          </html>
+          <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
+          <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-resource.js"></script>
+
+          <script type="text/javascript" src="/js/app.js"></script>
+          <script type="text/javascript" src="/js/controllers/destinations-controller.js"></script>
+
+          <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-49717852-4', 'auto');
+            ga('send', 'pageview');
+
+          </script>
+
+        </body>
+        </html>
