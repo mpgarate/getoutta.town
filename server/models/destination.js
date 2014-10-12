@@ -101,16 +101,16 @@ function getIconScore(prediction) {
   if (iconInput === "sleet" || iconInput === "snow") {
     return 10;
   }
-  if (iconInput === "fog" || iconInput === "rain") {
+  else if (iconInput === "fog" || iconInput === "rain") {
     return 7;
   }
-  if (iconInput === "wind" || iconInput === "cloudy") {
+  else if (iconInput === "wind" || iconInput === "cloudy") {
     return 5;
   }
-  if (iconInput === "partly-cloudy-day") {
+  else if (iconInput === "partly-cloudy-day") {
     return 4;
   }
-  if (iconInput === "clear-day") {
+  else if (iconInput === "clear-day") {
     return 0;
   }
   else {

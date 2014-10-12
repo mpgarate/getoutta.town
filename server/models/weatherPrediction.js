@@ -8,6 +8,7 @@ var WeatherPredictionSchema = new Schema({
   temperatureMin: Number,
   temperatureMax: Number,
   precipProbability: Number,
+  windSpeed: Number,
   dateFetched: Date
 });
 
@@ -94,7 +95,9 @@ WeatherPredictionSchema.statics.createPredictionFromJson = function(destination,
     date: new Date(),
     icon: json.daily.data[0].icon,
     temperatureMin: json.daily.data[0].temperatureMin,
-    temperatureMax: json.daily.data[0].temperatureMax
+    temperatureMax: json.daily.data[0].temperatureMax,
+    precipProbability: json.daily.data[0].precipProbability,
+    windSpeed: Math.round(json.daily.data[0].windSpeed)
   });
 
   destination.weatherPredictions.push(weatherPrediction);
@@ -104,7 +107,6 @@ WeatherPredictionSchema.statics.createPredictionFromJson = function(destination,
   });
 
 }
-
 WeatherPrediction = mongoose.model("WeatherPrediction",
   WeatherPredictionSchema);
 module.exports = WeatherPrediction;
