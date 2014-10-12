@@ -48,11 +48,11 @@
 
             <div ng-controller="destinationsController">
               <div ng-repeat="destination in destinations">
-                <section id="slide-{{$index}}" class="homeSlide" skrollr-tag>
+                <section class="homeSlide" skrollr-tag>
                   <div class="bcg bcg-{{destination.slug}}">
                     <div class="hsContainer">
                       <div class="hsContent">
-                        <h2>{{$index + 1}}. {{destination.name}}, {{destination.state}}</h2>
+                        <h2>{{$index + 2}}. {{destination.name}}, {{destination.state}}</h2>
                         <div class="weatherInfo">
                           <div class="weatherInfo-1">
                             <table>

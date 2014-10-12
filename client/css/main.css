@@ -156,7 +156,7 @@ main { overflow-x: hidden; }
 .hsContent {
 	position: absolute;
 	left: 20%;
-	top: 75%;
+	top: 20%;
 	width: 100%;
 }
 	.hsContent h1 {
@@ -191,30 +191,6 @@ main { overflow-x: hidden; }
 	margin-top:100px;
 }
 
-/* Slide 2 */
-#slide-2 .hsContent {
-	margin-left: -170px;
-	margin-top:-400px;
-	bottom: 200px;
-}
-
-/* Slide 3 */
-#slide-3 .hsContent {
-	margin-left: -170px;
-	margin-top: -400px;
-}
-	#slide-3 h2 {
-		color: #000;
-	}
-
-/* Slide 4 */
-#slide-4 .hsContent {
-	    margin-left: -170px;
-	    margin-top: -400px;
-}
-	#slide-4 h2 {
-	    background: none;
-	}
 
 /* ==========================================================================
    Helper classes
