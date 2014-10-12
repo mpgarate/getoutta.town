@@ -105,11 +105,11 @@ td{ padding: 5px; }
 	padding-right: 15px;
 }
 .form_class{
-    padding: 0.5em 0.6em;
-    display: inline-block;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+  padding: 0.5em 0.6em;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .no-js { padding-top: 106px; }
@@ -159,18 +159,18 @@ main { overflow-x: hidden; }
 	top: 20%;
 	width: 100%;
 }
-	.hsContent h1 {
-		color: #fff;
-		font-size: 5em;
-		line-height: 90%;
-	}
-	.hsContent p {
-		color: #b2b2b2;
-	}
-	.hsContent a {
-		color: #b2b2b2;
-		text-decoration: underline;
-	}
+.hsContent h1 {
+  color: #fff;
+  font-size: 5em;
+  line-height: 90%;
+}
+.hsContent p {
+  color: #b2b2b2;
+}
+.hsContent a {
+  color: #b2b2b2;
+  text-decoration: underline;
+}
 
 
 .bcg-new-orleans {background-image:url('../img/bcg_slide-new-orleans.jpg')}
@@ -187,8 +187,12 @@ main { overflow-x: hidden; }
 /* Slide 1 */
 #slide-1 .bcg {background-image:url('../img/bcg_slide-1.jpg')}
 #slide-1 .hsContent {
-	top: auto;
-	margin-top:100px;
+  top: auto;
+  margin-top: 100px;
+  margin: 100px auto;
+  position: relative;
+  text-align: center;
+  left: 0;
 }
 
 
@@ -196,43 +200,43 @@ main { overflow-x: hidden; }
    Helper classes
    ========================================================================== */
 
-.ir {
+   .ir {
     background-color: transparent;
     border: 0;
     overflow: hidden;
     /* IE 6/7 fallback */
     *text-indent: -9999px;
-}
+  }
 
-.ir:before {
+  .ir:before {
     content: "";
     display: block;
     width: 0;
     height: 150%;
-}
+  }
 
 /*
  * Hide from both screenreaders and browsers: h5bp.com/u
  */
 
-.hidden {
-    display: none !important;
-    visibility: hidden;
+ .hidden {
+  display: none !important;
+  visibility: hidden;
 }
 
 /*
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
 
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
+ .visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 /*
@@ -240,32 +244,32 @@ main { overflow-x: hidden; }
  * when navigated to via the keyboard: h5bp.com/p
  */
 
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
+ .visuallyhidden.focusable:active,
+ .visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
 }
 
 /*
  * Hide visually and from screenreaders, but maintain layout
  */
 
-.invisible {
-    visibility: hidden;
+ .invisible {
+  visibility: hidden;
 }
 
 .clearfix:before,
 .clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+  content: " "; /* 1 */
+  display: table; /* 2 */
 }
 
 .clearfix:after {
-    clear: both;
+  clear: both;
 }
 
 /*
@@ -273,6 +277,6 @@ main { overflow-x: hidden; }
  * Include this rule to trigger hasLayout and contain floats.
  */
 
-.clearfix {
-    *zoom: 1;
+ .clearfix {
+  *zoom: 1;
 }
