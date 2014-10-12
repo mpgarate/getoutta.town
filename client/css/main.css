@@ -174,6 +174,7 @@ main { overflow-x: hidden; }
 
 
 .bcg-new-orleans {background-image:url('../img/bcg_slide-new-orleans.jpg')}
+.bcg-new-york-city {background-image:url('../img/bcg_slide-new-york-city.jpg')}
 .bcg-boston{background-image:url('../img/bcg_slide-boston.jpg')}
 .bcg-washington-dc {background-image:url('../img/bcg_slide-washington-dc.jpg')}
 .bcg-san-francisco {background-image:url('../img/bcg_slide-san-francisco.jpg')}
@@ -191,7 +192,6 @@ main { overflow-x: hidden; }
 }
 
 /* Slide 2 */
-#slide-2 .bcg {background-image:url('../img/bcg_slide-2.jpg')}
 #slide-2 .hsContent {
 	margin-left: -170px;
 	margin-top:-400px;
@@ -199,7 +199,6 @@ main { overflow-x: hidden; }
 }
 
 /* Slide 3 */
-#slide-3 .bcg {background-image:url('../img/bcg_slide-3.jpg')}
 #slide-3 .hsContent {
 	margin-left: -170px;
 	margin-top: -400px;
@@ -209,7 +208,6 @@ main { overflow-x: hidden; }
 	}
 
 /* Slide 4 */
-#slide-4 .bcg {background-image:url('../img/bcg_slide-4.jpg')}
 #slide-4 .hsContent {
 	    margin-left: -170px;
 	    margin-top: -400px;
