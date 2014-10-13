@@ -23,10 +23,10 @@ WeatherPredictionSchema.statics.refreshWeatherIfNeeded = function() {
       return;
     }
 
-    var secondsInADay = 86400;
+    var secondsInTwelveHours = 43200;
     var today = new Date();
 
-    if (today - destinations[0].date > secondsInADay) {
+    if (today - destinations[0].date > secondsInTwelveHours) {
       WeatherPrediction.refreshAll();
     }
   });
