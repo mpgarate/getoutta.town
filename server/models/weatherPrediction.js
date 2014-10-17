@@ -4,6 +4,7 @@ var request = require('request');
 
 var WeatherPredictionSchema = new Schema({
   date: Date,
+  dateRetrieved: Date,
   icon: String,
   temperatureMin: Number,
   temperatureMax: Number,
@@ -92,6 +93,7 @@ WeatherPredictionSchema.statics.createPredictionFromJson = function(
 
   var weatherPrediction = new WeatherPrediction({
     date: new Date(json.daily.data[0].time * 1000),
+    dateRetrieved: new Date(),
     icon: json.daily.data[0].icon,
     temperatureMin: Math.round(json.daily.data[0].temperatureMin),
     temperatureMax: Math.round(json.daily.data[0].temperatureMax),
