@@ -19,7 +19,17 @@ WeatherPredictionSchema.statics.refreshWeatherIfNeeded = function() {
   Destination.find({}, function(err, destinations) {
     if (err) return console.log("error:" + err);
 
-    WeatherPrediction.refreshAll();
+    if (0 === destinations[0].weatherPredictions.length) {
+      WeatherPrediction.refreshAll();
+      return;
+    }
+
+    var secondsInTwelveHours = 43200;
+    var today = new Date();
+
+    if (today - destinations[0].weatherPredictions[0].date > secondsInTwelveHours) {
+      WeatherPrediction.refreshAll();
+    }
   });
 };
 
